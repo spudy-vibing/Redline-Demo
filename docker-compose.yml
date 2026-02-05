@@ -1,14 +1,12 @@
-version: '3.8'
-
 services:
   neo4j:
     image: neo4j:5.17.0-community
-    container_name: wirescreen-neo4j
+    container_name: redline-neo4j
     ports:
       - "7474:7474"  # HTTP
       - "7687:7687"  # Bolt
     environment:
-      - NEO4J_AUTH=neo4j/wirescreen123
+      - NEO4J_AUTH=neo4j/redline123
       - NEO4J_PLUGINS=["apoc"]
       - NEO4J_dbms_security_procedures_unrestricted=apoc.*
       - NEO4J_dbms_memory_heap_initial__size=512m
@@ -23,19 +21,19 @@ services:
       retries: 10
       start_period: 30s
     networks:
-      - wirescreen
+      - redline
 
   api:
     build:
       context: .
       dockerfile: api/Dockerfile
-    container_name: wirescreen-api
+    container_name: redline-api
     ports:
       - "8000:8000"
     environment:
       - NEO4J_URI=bolt://neo4j:7687
       - NEO4J_USER=neo4j
-      - NEO4J_PASSWORD=wirescreen123
+      - NEO4J_PASSWORD=redline123
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
     depends_on:
       neo4j:
@@ -46,13 +44,13 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - wirescreen
+      - redline
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: wirescreen-frontend
+    container_name: redline-frontend
     ports:
       - "5173:5173"
     environment:
@@ -60,12 +58,12 @@ services:
     depends_on:
       - api
     networks:
-      - wirescreen
+      - redline
 
 volumes:
   neo4j_data:
   neo4j_logs:
 
 networks:
-  wirescreen:
+  redline:
     driver: bridge
