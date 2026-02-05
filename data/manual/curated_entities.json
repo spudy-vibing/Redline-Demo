@@ -1,0 +1,511 @@
+{
+  "entities": [
+    {
+      "id": "huawei-001",
+      "name_en": "Huawei Technologies Co., Ltd.",
+      "name_cn": "华为技术有限公司",
+      "uscc": "914403001922038216",
+      "type": "company",
+      "status": "Active",
+      "registered_capital": "CNY 40,300,000,000",
+      "founded": "1987-09-15",
+      "jurisdiction": "Shenzhen, Guangdong, China",
+      "industry": "Telecommunications Equipment",
+      "description": "Global provider of ICT infrastructure and smart devices. World's largest telecommunications equipment manufacturer.",
+      "risk_score": 95,
+      "risk_flags": ["entity_list", "ns_cmic", "cmc_1260h", "military_civil_fusion"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2019-05-16",
+          "program": "Entity List",
+          "citation": "84 FR 22961"
+        },
+        {
+          "list_name": "NS-CMIC",
+          "date_listed": "2021-06-03",
+          "program": "EO 13959"
+        },
+        {
+          "list_name": "Section 1260H",
+          "date_listed": "2021-06-03",
+          "program": "NDAA FY2021"
+        }
+      ]
+    },
+    {
+      "id": "huawei-union-001",
+      "name_en": "Huawei Investment & Holding Co., Ltd.",
+      "name_cn": "华为投资控股有限公司",
+      "type": "company",
+      "jurisdiction": "Shenzhen, Guangdong, China",
+      "description": "Employee shareholding vehicle ('Union of Huawei Investment & Holding Co., Ltd.') that holds 98.99% of Huawei Technologies",
+      "risk_score": 90,
+      "risk_flags": ["bis_50_captured"]
+    },
+    {
+      "id": "ren-zhengfei-001",
+      "name_en": "Ren Zhengfei",
+      "name_cn": "任正非",
+      "pinyin": "Ren Zhengfei",
+      "type": "person",
+      "nationality": "Chinese",
+      "description": "Founder and CEO of Huawei Technologies. Former PLA engineer.",
+      "risk_score": 70,
+      "risk_flags": ["pla_background"]
+    },
+    {
+      "id": "hisilicon-001",
+      "name_en": "HiSilicon Technologies Co., Ltd.",
+      "name_cn": "海思半导体有限公司",
+      "uscc": "91440300708409955J",
+      "type": "company",
+      "status": "Active",
+      "founded": "2004-10-18",
+      "jurisdiction": "Shenzhen, Guangdong, China",
+      "industry": "Semiconductor Design",
+      "description": "Fabless semiconductor company, wholly-owned subsidiary of Huawei. Designs Kirin mobile SoCs and Ascend AI chips.",
+      "risk_score": 95,
+      "risk_flags": ["entity_list", "bis_50_captured", "strategic_sector"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2019-05-16"
+        }
+      ]
+    },
+    {
+      "id": "huawei-cloud-001",
+      "name_en": "Huawei Cloud Computing Technologies Co., Ltd.",
+      "name_cn": "华为云计算技术有限公司",
+      "type": "company",
+      "jurisdiction": "Guiyang, Guizhou, China",
+      "industry": "Cloud Computing",
+      "description": "Huawei's cloud services subsidiary",
+      "risk_score": 85,
+      "risk_flags": ["bis_50_captured", "data_security_concern"]
+    },
+    {
+      "id": "smic-001",
+      "name_en": "Semiconductor Manufacturing International Corporation",
+      "name_cn": "中芯国际集成电路制造有限公司",
+      "uscc": "91310000677322415Y",
+      "type": "company",
+      "status": "Active",
+      "registered_capital": "USD 5,600,000,000",
+      "founded": "2000-04-03",
+      "jurisdiction": "Shanghai, China",
+      "industry": "Semiconductor Manufacturing",
+      "description": "Largest semiconductor foundry in mainland China. Allegedly produced 7nm chips for Huawei despite sanctions.",
+      "risk_score": 95,
+      "risk_flags": ["entity_list", "meu_list", "ns_cmic", "strategic_sector"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2020-12-18"
+        },
+        {
+          "list_name": "Military End User List",
+          "date_listed": "2020-12-18"
+        },
+        {
+          "list_name": "NS-CMIC",
+          "date_listed": "2020-12-03"
+        }
+      ]
+    },
+    {
+      "id": "smic-beijing-001",
+      "name_en": "SMIC Beijing",
+      "name_cn": "中芯北方集成电路制造（北京）有限公司",
+      "type": "company",
+      "jurisdiction": "Beijing, China",
+      "industry": "Semiconductor Manufacturing",
+      "description": "SMIC's Beijing fab focused on advanced process nodes",
+      "risk_score": 90,
+      "risk_flags": ["bis_50_captured", "entity_list"]
+    },
+    {
+      "id": "deepseek-001",
+      "name_en": "DeepSeek",
+      "name_cn": "深度求索",
+      "type": "company",
+      "status": "Active",
+      "founded": "2023-05-01",
+      "jurisdiction": "Hangzhou, Zhejiang, China",
+      "industry": "Artificial Intelligence",
+      "description": "AI lab founded by High-Flyer Capital Management. Developed DeepSeek-V3 and DeepSeek-R1 models. Subject of US congressional investigation.",
+      "risk_score": 75,
+      "risk_flags": ["under_investigation", "strategic_sector", "military_civil_fusion_concern"],
+      "sanctions": []
+    },
+    {
+      "id": "highflyer-001",
+      "name_en": "High-Flyer Capital Management",
+      "name_cn": "幻方量化",
+      "type": "company",
+      "jurisdiction": "Hangzhou, Zhejiang, China",
+      "industry": "Quantitative Hedge Fund",
+      "description": "Quantitative hedge fund that founded DeepSeek. One of China's largest quant funds.",
+      "risk_score": 60,
+      "risk_flags": ["strategic_investor"]
+    },
+    {
+      "id": "avic-001",
+      "name_en": "Aviation Industry Corporation of China",
+      "name_cn": "中国航空工业集团有限公司",
+      "uscc": "91110000100006821L",
+      "type": "company",
+      "status": "Active",
+      "registered_capital": "CNY 164,000,000,000",
+      "founded": "2008-11-06",
+      "jurisdiction": "Beijing, China",
+      "industry": "Aerospace & Defense",
+      "description": "Chinese state-owned aerospace and defense conglomerate. Designs and manufactures military aircraft including J-20 fighter.",
+      "risk_score": 100,
+      "risk_flags": ["entity_list", "meu_list", "ns_cmic", "central_soe", "defense_industrial_base", "cmc_1260h"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2020-12-22"
+        },
+        {
+          "list_name": "Military End User List",
+          "date_listed": "2020-12-22"
+        },
+        {
+          "list_name": "NS-CMIC",
+          "date_listed": "2021-06-03"
+        }
+      ]
+    },
+    {
+      "id": "avic-xian-001",
+      "name_en": "AVIC Xi'an Aircraft Industry",
+      "name_cn": "中航西安飞机工业集团",
+      "type": "company",
+      "jurisdiction": "Xi'an, Shaanxi, China",
+      "industry": "Aircraft Manufacturing",
+      "description": "Manufactures H-6 bomber and Y-20 transport aircraft",
+      "risk_score": 100,
+      "risk_flags": ["bis_50_captured", "defense_industrial_base"]
+    },
+    {
+      "id": "cetc-001",
+      "name_en": "China Electronics Technology Group Corporation",
+      "name_cn": "中国电子科技集团有限公司",
+      "uscc": "91110000100003012N",
+      "type": "company",
+      "status": "Active",
+      "registered_capital": "CNY 58,000,000,000",
+      "founded": "2002-03-01",
+      "jurisdiction": "Beijing, China",
+      "industry": "Defense Electronics",
+      "description": "State-owned defense electronics conglomerate. Parent company of Hikvision.",
+      "risk_score": 100,
+      "risk_flags": ["entity_list", "meu_list", "ns_cmic", "central_soe", "defense_industrial_base"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2019-10-07"
+        },
+        {
+          "list_name": "NS-CMIC",
+          "date_listed": "2021-06-03"
+        }
+      ]
+    },
+    {
+      "id": "hikvision-001",
+      "name_en": "Hangzhou Hikvision Digital Technology Co., Ltd.",
+      "name_cn": "杭州海康威视数字技术股份有限公司",
+      "uscc": "91330000733796106P",
+      "type": "company",
+      "status": "Active",
+      "founded": "2001-11-30",
+      "jurisdiction": "Hangzhou, Zhejiang, China",
+      "industry": "Video Surveillance",
+      "description": "World's largest video surveillance manufacturer. Implicated in Xinjiang surveillance infrastructure.",
+      "risk_score": 95,
+      "risk_flags": ["entity_list", "cmc_1260h", "xinjiang_uyghur", "human_rights_abuse"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2019-10-07",
+          "citation": "84 FR 54002"
+        },
+        {
+          "list_name": "Section 1260H",
+          "date_listed": "2021-06-03"
+        }
+      ]
+    },
+    {
+      "id": "dji-001",
+      "name_en": "SZ DJI Technology Co., Ltd.",
+      "name_cn": "深圳市大疆创新科技有限公司",
+      "uscc": "91440300685516871K",
+      "type": "company",
+      "status": "Active",
+      "founded": "2006-11-06",
+      "jurisdiction": "Shenzhen, Guangdong, China",
+      "industry": "Drones & Aerial Imaging",
+      "description": "World's largest consumer drone manufacturer. Subject to various US restrictions.",
+      "risk_score": 85,
+      "risk_flags": ["entity_list", "cmc_1260h", "xinjiang_uyghur"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2020-12-18"
+        },
+        {
+          "list_name": "Section 1260H",
+          "date_listed": "2022-10-05"
+        }
+      ]
+    },
+    {
+      "id": "sensetime-001",
+      "name_en": "SenseTime Group Inc.",
+      "name_cn": "商汤科技",
+      "type": "company",
+      "status": "Active",
+      "founded": "2014-10-01",
+      "jurisdiction": "Hong Kong / Shanghai, China",
+      "industry": "Artificial Intelligence",
+      "description": "AI company specializing in facial recognition. Implicated in Xinjiang surveillance.",
+      "risk_score": 90,
+      "risk_flags": ["entity_list", "ns_cmic", "xinjiang_uyghur"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2019-10-07"
+        },
+        {
+          "list_name": "NS-CMIC",
+          "date_listed": "2021-12-16"
+        }
+      ]
+    },
+    {
+      "id": "megvii-001",
+      "name_en": "Megvii Technology Limited",
+      "name_cn": "旷视科技",
+      "type": "company",
+      "status": "Active",
+      "founded": "2011-10-01",
+      "jurisdiction": "Beijing, China",
+      "industry": "Artificial Intelligence",
+      "description": "AI company known for Face++ facial recognition platform. Xinjiang surveillance involvement.",
+      "risk_score": 85,
+      "risk_flags": ["entity_list", "xinjiang_uyghur"],
+      "sanctions": [
+        {
+          "list_name": "BIS Entity List",
+          "date_listed": "2019-10-07"
+        }
+      ]
+    },
+    {
+      "id": "byd-001",
+      "name_en": "BYD Company Limited",
+      "name_cn": "比亚迪股份有限公司",
+      "uscc": "91440300192348305T",
+      "type": "company",
+      "status": "Active",
+      "founded": "1995-02-10",
+      "jurisdiction": "Shenzhen, Guangdong, China",
+      "industry": "Electric Vehicles / Batteries",
+      "description": "World's largest EV manufacturer. Warren Buffett is a major investor.",
+      "risk_score": 40,
+      "risk_flags": ["forced_labor_concern", "strategic_sector"],
+      "sanctions": []
+    },
+    {
+      "id": "catl-001",
+      "name_en": "Contemporary Amperex Technology Co., Limited",
+      "name_cn": "宁德时代新能源科技股份有限公司",
+      "uscc": "91350902699252068D",
+      "type": "company",
+      "status": "Active",
+      "founded": "2011-12-16",
+      "jurisdiction": "Ningde, Fujian, China",
+      "industry": "Battery Manufacturing",
+      "description": "World's largest EV battery manufacturer. Supplies Tesla, BMW, Mercedes.",
+      "risk_score": 45,
+      "risk_flags": ["cmc_1260h", "strategic_sector"],
+      "sanctions": [
+        {
+          "list_name": "Section 1260H",
+          "date_listed": "2024-01-31"
+        }
+      ]
+    },
+    {
+      "id": "sasac-001",
+      "name_en": "State-owned Assets Supervision and Administration Commission",
+      "name_cn": "国务院国有资产监督管理委员会",
+      "type": "government",
+      "level": "central",
+      "body_type": "soe_parent",
+      "description": "Chinese government body that oversees 97 central SOEs on behalf of the State Council"
+    },
+    {
+      "id": "cmc-001",
+      "name_en": "Central Military Commission",
+      "name_cn": "中央军事委员会",
+      "type": "government",
+      "level": "central",
+      "body_type": "military",
+      "description": "Supreme military command authority of China. Controls the PLA."
+    },
+    {
+      "id": "miit-001",
+      "name_en": "Ministry of Industry and Information Technology",
+      "name_cn": "中华人民共和国工业和信息化部",
+      "type": "government",
+      "level": "central",
+      "body_type": "regulatory",
+      "description": "Regulates industry and IT sector. Oversees telecommunications licensing."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "huawei-union-001",
+      "to": "huawei-001",
+      "type": "OWNS",
+      "percentage": 98.99,
+      "start_date": "2019-01-01",
+      "source": "Huawei Annual Report 2023"
+    },
+    {
+      "from": "ren-zhengfei-001",
+      "to": "huawei-001",
+      "type": "OWNS",
+      "percentage": 1.01,
+      "source": "Huawei Annual Report 2023"
+    },
+    {
+      "from": "ren-zhengfei-001",
+      "to": "huawei-001",
+      "type": "OFFICER_OF",
+      "role": "Founder & CEO",
+      "start_date": "1987-09-15"
+    },
+    {
+      "from": "huawei-001",
+      "to": "hisilicon-001",
+      "type": "OWNS",
+      "percentage": 100,
+      "source": "Corporate registry"
+    },
+    {
+      "from": "huawei-001",
+      "to": "huawei-cloud-001",
+      "type": "OWNS",
+      "percentage": 100
+    },
+    {
+      "from": "highflyer-001",
+      "to": "deepseek-001",
+      "type": "OWNS",
+      "percentage": 100,
+      "start_date": "2023-05-01",
+      "source": "Public reporting"
+    },
+    {
+      "from": "smic-001",
+      "to": "smic-beijing-001",
+      "type": "OWNS",
+      "percentage": 51,
+      "source": "SMIC Annual Report"
+    },
+    {
+      "from": "sasac-001",
+      "to": "avic-001",
+      "type": "CONTROLS",
+      "percentage": 100,
+      "control_type": "state_ownership",
+      "source": "SASAC official list"
+    },
+    {
+      "from": "avic-001",
+      "to": "avic-xian-001",
+      "type": "OWNS",
+      "percentage": 100
+    },
+    {
+      "from": "sasac-001",
+      "to": "cetc-001",
+      "type": "CONTROLS",
+      "percentage": 100,
+      "control_type": "state_ownership",
+      "source": "SASAC official list"
+    },
+    {
+      "from": "cetc-001",
+      "to": "hikvision-001",
+      "type": "OWNS",
+      "percentage": 42.12,
+      "source": "Hikvision Annual Report 2023"
+    }
+  ],
+  "timeline_events": [
+    {
+      "entity_id": "huawei-001",
+      "date": "2019-05-16",
+      "event_type": "sanction_added",
+      "title": "Added to BIS Entity List",
+      "description": "Huawei and 68 affiliates added to Entity List for activities contrary to US national security",
+      "source": "84 FR 22961"
+    },
+    {
+      "entity_id": "huawei-001",
+      "date": "2020-05-15",
+      "event_type": "sanction_expanded",
+      "title": "Foreign Direct Product Rule Extended",
+      "description": "BIS amended FDPR to cut off Huawei's access to semiconductors made with US technology",
+      "source": "85 FR 29849"
+    },
+    {
+      "entity_id": "huawei-001",
+      "date": "2020-08-17",
+      "event_type": "sanction_expanded",
+      "title": "FDPR Further Tightened",
+      "description": "Additional 38 Huawei affiliates added; FDPR expanded to cover more third-party chips",
+      "source": "85 FR 51596"
+    },
+    {
+      "entity_id": "smic-001",
+      "date": "2020-12-18",
+      "event_type": "sanction_added",
+      "title": "Added to Entity List",
+      "description": "SMIC added for supplying China's military-industrial complex",
+      "source": "85 FR 83416"
+    },
+    {
+      "entity_id": "smic-001",
+      "date": "2023-09-01",
+      "event_type": "investigation",
+      "title": "7nm Huawei Chip Investigation",
+      "description": "US investigates whether SMIC violated sanctions by producing 7nm chip for Huawei Mate 60 Pro",
+      "source": "Reuters"
+    },
+    {
+      "entity_id": "deepseek-001",
+      "date": "2025-01-20",
+      "event_type": "product_launch",
+      "title": "DeepSeek-R1 Released",
+      "description": "DeepSeek releases R1 reasoning model, claiming performance rivaling OpenAI o1 at fraction of cost",
+      "source": "DeepSeek announcement"
+    },
+    {
+      "entity_id": "deepseek-001",
+      "date": "2025-04-15",
+      "event_type": "investigation",
+      "title": "US Congressional Investigation Launched",
+      "description": "House Select Committee on CCP opens investigation into DeepSeek's access to US chips and AI models",
+      "source": "Congressional Record"
+    }
+  ]
+}
