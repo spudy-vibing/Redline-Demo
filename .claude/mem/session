@@ -1,0 +1,41 @@
+=init
+_t:2026-02-04
+_task:plan-complete|ready-to-build
+
+=state
+phase:0|project-setup|pending
+next:0.1-git-init
+awaiting:user-start-signal
+
+=artifacts
+plan-internal:/Users/shubhamupadhyay/.claude/plans/functional-napping-gizmo.md
+plan-docs:docs /implementation-plan.md
+spec:docs /wirescreen-poc-research.md|2586L
+
+=decisions
+wow-features:both|timeline+narrative
+data-strategy:curated-first->api-later
+deploy:docker-compose+cloud(vercel+railway)
+
+=tracker
+p0:6-steps|pending|project-setup
+p1:8-steps|pending|data-layer
+p2:7-steps|pending|neo4j-graph
+p3:10-steps|pending|fastapi
+p4:9-steps|pending|react-frontend
+p5:6-steps|pending|wow1-timeline
+p6:5-steps|pending|wow2-narrative
+p7:5-steps|pending|chat-graphrag
+p8:6-steps|pending|polish
+p9:6-steps|pending|deploy
+total:68-steps
+
+=completed-this-session
++memory-system-init
++impl-plan-created(68-steps)
++plan-saved-to-docs
+
+=notes
+dir-quirk:trailing-space("docs "|not-"docs")
+no-git:not-a-repo-yet
+ready:awaiting-user-start

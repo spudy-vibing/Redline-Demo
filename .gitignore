@@ -1,0 +1,47 @@
+# Environment
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.eggs/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node/React
+node_modules/
+dist/
+build/
+.next/
+*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Data (keep structure, ignore large files)
+data/raw/*.json
+data/raw/*.xml
+data/processed/*.json
+!data/manual/
+
+# Logs
+*.log
+logs/
+
+# Docker volumes (local)
+neo4j_data/
+neo4j_logs/
