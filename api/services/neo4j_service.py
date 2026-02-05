@@ -71,9 +71,9 @@ class Neo4jService:
         MATCH (n)
         WHERE (n:Company OR n:Person OR n:GovernmentBody)
           AND (
-            toLower(n.name_en) CONTAINS toLower($query)
-            OR toLower(n.name_cn) CONTAINS toLower($query)
-            OR toLower(coalesce(n.pinyin, '')) CONTAINS toLower($query)
+            toLower(n.name_en) CONTAINS toLower($search_term)
+            OR toLower(n.name_cn) CONTAINS toLower($search_term)
+            OR toLower(coalesce(n.pinyin, '')) CONTAINS toLower($search_term)
           )
           {label_filter}
         RETURN n.id AS id,
@@ -83,12 +83,12 @@ class Neo4jService:
                n.risk_flags AS risk_flags,
                n.jurisdiction AS jurisdiction,
                n.risk_score AS risk_score
-        ORDER BY n.risk_score DESC NULLS LAST, n.name_en
+        ORDER BY coalesce(n.risk_score, 0) DESC, n.name_en
         LIMIT $limit
         """
 
         with self.session() as session:
-            result = session.run(cypher, query=query, limit=limit)
+            result = session.run(cypher, search_term=query, limit=limit)
             return [dict(record) for record in result]
 
     def get_entity(self, entity_id: str) -> Optional[dict]:
@@ -123,27 +123,20 @@ class Neo4jService:
 
         Returns nodes and edges for visualization.
         """
+        # Neo4j doesn't support parameterized variable-length paths
+        # Use a simpler query that gets all directly connected nodes
         cypher = """
         MATCH (center {id: $entity_id})
+        OPTIONAL MATCH (center)-[r1:OWNS|OFFICER_OF|CONTROLS]-(n1)
+        OPTIONAL MATCH (n1)-[r2:OWNS|OFFICER_OF|CONTROLS]-(n2)
+        WHERE n2 <> center
 
-        // Get connected nodes up to specified depth
-        CALL {
-            WITH center
-            MATCH path = (center)-[r:OWNS|OFFICER_OF|CONTROLS|SUBSIDIARY_OF*1..$depth]-(connected)
-            RETURN connected, relationships(path) AS rels
-            UNION
-            WITH center
-            RETURN center AS connected, [] AS rels
-        }
+        WITH center,
+             collect(DISTINCT n1) + collect(DISTINCT n2) AS connected_nodes,
+             collect(DISTINCT r1) + collect(DISTINCT r2) AS all_rels
 
-        WITH collect(DISTINCT connected) AS nodes,
-             collect(DISTINCT rels) AS all_rels
-
-        // Flatten relationships
-        UNWIND all_rels AS rel_list
-        UNWIND rel_list AS rel
-
-        WITH nodes, collect(DISTINCT rel) AS edges
+        WITH [center] + [n IN connected_nodes WHERE n IS NOT NULL] AS nodes,
+             [r IN all_rels WHERE r IS NOT NULL] AS edges
 
         RETURN
             [n IN nodes | {
@@ -164,7 +157,7 @@ class Neo4jService:
         """
 
         with self.session() as session:
-            result = session.run(cypher, entity_id=entity_id, depth=depth)
+            result = session.run(cypher, entity_id=entity_id)
             record = result.single()
             if record:
                 return {

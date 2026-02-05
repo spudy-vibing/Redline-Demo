@@ -44,6 +44,24 @@ export interface TimelineEvent {
   source?: string
 }
 
+export interface TimelinePattern {
+  type: string
+  severity: 'high' | 'medium' | 'low'
+  description: string
+  details: string
+  related_events: string[]
+}
+
+export interface TimelineAnalysis {
+  entity_id: string
+  events: TimelineEvent[]
+  patterns: TimelinePattern[]
+  event_summary: {
+    total: number
+    by_type: Record<string, number>
+  }
+}
+
 export interface SearchResult {
   id: string
   name_en: string
@@ -115,6 +133,37 @@ export interface ScreeningResponse {
   }
 }
 
+export interface NarrativeSource {
+  type: string
+  citation: string
+  description: string
+}
+
+export interface RiskNarrative {
+  entity_id: string
+  narrative: string
+  generated_by: 'claude' | 'template'
+  sources: NarrativeSource[]
+}
+
+export interface ChatMessage {
+  role: 'user' | 'assistant'
+  content: string
+}
+
+export interface ChatSource {
+  entity_id: string
+  name: string
+  type: string
+}
+
+export interface ChatResponse {
+  answer: string
+  cypher_query?: string
+  sources: ChatSource[]
+  generated_by: 'claude' | 'template'
+}
+
 // API functions
 export async function searchEntities(
   query: string,
@@ -148,9 +197,9 @@ export async function getBIS50Analysis(entityId: string): Promise<BIS50Analysis>
   return response.data
 }
 
-export async function getEntityTimeline(entityId: string): Promise<TimelineEvent[]> {
+export async function getEntityTimeline(entityId: string): Promise<TimelineAnalysis> {
   const response = await api.get(`/entity/${entityId}/timeline`)
-  return response.data.events
+  return response.data
 }
 
 export async function screenEntities(names: string[]): Promise<ScreeningResponse> {
@@ -160,6 +209,19 @@ export async function screenEntities(names: string[]): Promise<ScreeningResponse
 
 export async function quickScreen(name: string): Promise<ScreeningResult> {
   const response = await api.post('/screen/quick', null, { params: { name } })
+  return response.data
+}
+
+export async function getRiskNarrative(entityId: string): Promise<RiskNarrative> {
+  const response = await api.get(`/entity/${entityId}/narrative`)
+  return response.data
+}
+
+export async function sendChatMessage(
+  message: string,
+  history: ChatMessage[] = []
+): Promise<ChatResponse> {
+  const response = await api.post('/chat', { message, history })
   return response.data
 }
 

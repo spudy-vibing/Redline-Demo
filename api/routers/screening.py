@@ -5,7 +5,7 @@ Screening API endpoints.
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from ..services.neo4j_service import get_neo4j_service
+from services.neo4j_service import get_neo4j_service
 
 router = APIRouter(prefix="/api", tags=["screening"])
 

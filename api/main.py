@@ -16,8 +16,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
-from .routers import entities, screening
-from .services.neo4j_service import get_neo4j_service
+from routers import entities, screening, chat
+from services.neo4j_service import get_neo4j_service
 
 load_dotenv()
 
@@ -63,6 +63,7 @@ app.add_middleware(
 # Include routers
 app.include_router(entities.router)
 app.include_router(screening.router)
+app.include_router(chat.router)
 
 
 @app.get("/")
@@ -78,7 +79,9 @@ async def root():
             "network": "/api/entity/{id}/network",
             "bis50": "/api/entity/{id}/bis50",
             "timeline": "/api/entity/{id}/timeline",
+            "narrative": "/api/entity/{id}/narrative",
             "screen": "POST /api/screen",
+            "chat": "POST /api/chat",
         }
     }
 

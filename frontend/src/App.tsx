@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import SearchPage from './pages/SearchPage'
 import EntityPage from './pages/EntityPage'
 import ScreenerPage from './pages/ScreenerPage'
+import ChatPage from './pages/ChatPage'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<SearchPage />} />
         <Route path="/entity/:id" element={<EntityPage />} />
         <Route path="/screener" element={<ScreenerPage />} />
+        <Route path="/chat" element={<ChatPage />} />
       </Routes>
     </Layout>
   )

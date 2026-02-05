@@ -461,6 +461,14 @@
     },
     {
       "entity_id": "huawei-001",
+      "date": "2019-09-01",
+      "event_type": "restructure",
+      "title": "Cloud Business Spinoff Initiated",
+      "description": "Huawei begins restructuring cloud computing division as separate legal entity, potentially to isolate from sanctions",
+      "source": "Corporate registry filings"
+    },
+    {
+      "entity_id": "huawei-001",
       "date": "2020-05-15",
       "event_type": "sanction_expanded",
       "title": "Foreign Direct Product Rule Extended",
@@ -474,6 +482,46 @@
       "title": "FDPR Further Tightened",
       "description": "Additional 38 Huawei affiliates added; FDPR expanded to cover more third-party chips",
       "source": "85 FR 51596"
+    },
+    {
+      "entity_id": "huawei-001",
+      "date": "2020-11-17",
+      "event_type": "ownership_change",
+      "title": "Honor Brand Divested",
+      "description": "Huawei sells Honor smartphone brand to Shenzhen Zhixin New Information Technology consortium for $15B",
+      "source": "Reuters, company announcement"
+    },
+    {
+      "entity_id": "huawei-001",
+      "date": "2021-06-03",
+      "event_type": "sanction_added",
+      "title": "Added to NS-CMIC List",
+      "description": "Huawei designated as Chinese Military-Industrial Complex company under EO 13959",
+      "source": "86 FR 29846"
+    },
+    {
+      "entity_id": "hisilicon-001",
+      "date": "2019-05-16",
+      "event_type": "sanction_added",
+      "title": "Added to BIS Entity List",
+      "description": "HiSilicon added as Huawei affiliate to Entity List",
+      "source": "84 FR 22961"
+    },
+    {
+      "entity_id": "hisilicon-001",
+      "date": "2020-01-15",
+      "event_type": "name_change",
+      "title": "Subsidiary Renamed",
+      "description": "HiSilicon Shanghai subsidiary renamed to Haibo Semiconductor (海波半导体) - potential sanctions evasion indicator",
+      "source": "Shanghai corporate registry"
+    },
+    {
+      "entity_id": "smic-001",
+      "date": "2020-09-15",
+      "event_type": "restructure",
+      "title": "Advanced Node Subsidiary Created",
+      "description": "SMIC creates new subsidiary for advanced process development ahead of potential sanctions",
+      "source": "Shanghai Stock Exchange filing"
     },
     {
       "entity_id": "smic-001",
@@ -492,6 +540,38 @@
       "source": "Reuters"
     },
     {
+      "entity_id": "hikvision-001",
+      "date": "2019-10-07",
+      "event_type": "sanction_added",
+      "title": "Added to BIS Entity List",
+      "description": "Hikvision added for enabling human rights abuses in Xinjiang",
+      "source": "84 FR 54002"
+    },
+    {
+      "entity_id": "hikvision-001",
+      "date": "2020-03-01",
+      "event_type": "restructure",
+      "title": "Overseas Operations Restructured",
+      "description": "Hikvision restructures overseas subsidiaries, creating new distribution entities in multiple jurisdictions",
+      "source": "Annual Report 2020"
+    },
+    {
+      "entity_id": "deepseek-001",
+      "date": "2023-05-01",
+      "event_type": "founding",
+      "title": "DeepSeek Founded",
+      "description": "DeepSeek AI lab established by High-Flyer Capital Management",
+      "source": "Corporate registry"
+    },
+    {
+      "entity_id": "deepseek-001",
+      "date": "2024-05-01",
+      "event_type": "product_launch",
+      "title": "DeepSeek-V2 Released",
+      "description": "DeepSeek releases V2 model with MoE architecture, reducing inference costs significantly",
+      "source": "DeepSeek technical report"
+    },
+    {
       "entity_id": "deepseek-001",
       "date": "2025-01-20",
       "event_type": "product_launch",
@@ -506,6 +586,22 @@
       "title": "US Congressional Investigation Launched",
       "description": "House Select Committee on CCP opens investigation into DeepSeek's access to US chips and AI models",
       "source": "Congressional Record"
+    },
+    {
+      "entity_id": "avic-001",
+      "date": "2020-12-22",
+      "event_type": "sanction_added",
+      "title": "Added to Entity List and MEU List",
+      "description": "AVIC and subsidiaries added for supporting China's military modernization",
+      "source": "85 FR 83416"
+    },
+    {
+      "entity_id": "cetc-001",
+      "date": "2019-10-07",
+      "event_type": "sanction_added",
+      "title": "Added to BIS Entity List",
+      "description": "CETC added for role in Xinjiang surveillance and military applications",
+      "source": "84 FR 54002"
     }
   ]
 }
