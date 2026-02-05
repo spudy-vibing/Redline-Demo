@@ -1,6 +1,7 @@
 # Environment
 .env
 .env.local
+.env.*.local
 *.env
 
 # Python
@@ -12,11 +13,15 @@ __pycache__/
 venv/
 .venv/
 env/
+ENV/
 .eggs/
 *.egg-info/
+*.egg
 .pytest_cache/
 .coverage
 htmlcov/
+.mypy_cache/
+.ruff_cache/
 
 # Node/React
 node_modules/
@@ -24,15 +29,21 @@ dist/
 build/
 .next/
 *.local
+.turbo/
+.cache/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-.DS_Store
+*~
 
-# Data (keep structure, ignore large files)
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (keep structure, ignore large downloaded files)
 data/raw/*.json
 data/raw/*.xml
 data/processed/*.json
@@ -41,7 +52,19 @@ data/processed/*.json
 # Logs
 *.log
 logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Docker volumes (local)
 neo4j_data/
 neo4j_logs/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.bak
+*.tmp
+*.temp
