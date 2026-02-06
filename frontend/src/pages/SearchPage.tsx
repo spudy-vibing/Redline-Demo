@@ -20,6 +20,11 @@ const flagLabels: Record<string, string> = {
   defense_industrial_base: 'Defense',
   strategic_sector: 'Strategic',
   under_investigation: 'Investigation',
+  sdn_list: 'OFAC SDN',
+  eu_sanctions: 'EU Sanctions',
+  un_sanctions: 'UN Sanctions',
+  export_control: 'Export Control',
+  terrorism: 'Terrorism',
 }
 
 function getRiskLevel(result: SearchResult): string {
@@ -149,9 +154,10 @@ function SearchResultCard({ result, index }: { result: SearchResult; index: numb
 const quickFilters = [
   { label: 'Huawei', query: 'Huawei' },
   { label: 'SMIC', query: 'SMIC' },
-  { label: 'AVIC', query: 'AVIC' },
-  { label: 'DeepSeek', query: 'DeepSeek' },
   { label: 'Hikvision', query: 'Hikvision' },
+  { label: 'DJI', query: 'DJI' },
+  { label: 'SenseTime', query: 'SenseTime' },
+  { label: 'COSCO', query: 'COSCO' },
 ]
 
 export default function SearchPage() {
@@ -198,17 +204,17 @@ export default function SearchPage() {
         {/* Stats */}
         <div className="flex items-center justify-center gap-8 mt-10">
           <div className="text-center group">
-            <div className="text-3xl font-bold text-redline-400 group-hover:scale-110 transition-transform">21</div>
+            <div className="text-3xl font-bold text-redline-400 group-hover:scale-110 transition-transform">15K+</div>
             <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider mt-1">Entities</div>
           </div>
           <div className="h-10 w-px bg-gradient-to-b from-transparent via-neutral-700 to-transparent" />
           <div className="text-center group">
-            <div className="text-3xl font-bold text-gold-400 group-hover:scale-110 transition-transform">13+</div>
+            <div className="text-3xl font-bold text-gold-400 group-hover:scale-110 transition-transform">5</div>
             <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider mt-1">Lists</div>
           </div>
           <div className="h-10 w-px bg-gradient-to-b from-transparent via-neutral-700 to-transparent" />
           <div className="text-center group">
-            <div className="text-3xl font-bold text-emerald-400 group-hover:scale-110 transition-transform">31</div>
+            <div className="text-3xl font-bold text-emerald-400 group-hover:scale-110 transition-transform">28K+</div>
             <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider mt-1">Relations</div>
           </div>
         </div>

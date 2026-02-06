@@ -56,13 +56,13 @@ export default function Layout({ children }: LayoutProps) {
             <div className="h-3 w-px bg-neutral-700" />
             <div className="flex items-center gap-1.5 text-xs font-mono">
               <span className="text-neutral-500">Entities:</span>
-              <span className="text-redline-400">21</span>
+              <span className="text-redline-400">15K+</span>
             </div>
             <div className="h-3 w-px bg-neutral-700" />
             <div className="flex items-center gap-1.5 text-xs font-mono">
               <AlertTriangle className="w-3 h-3 text-gold-500" />
               <span className="text-neutral-500">High Risk:</span>
-              <span className="text-gold-400">7</span>
+              <span className="text-gold-400">8K+</span>
             </div>
           </div>
 
