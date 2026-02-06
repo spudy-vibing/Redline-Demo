@@ -11,6 +11,42 @@ A knowledge graph-powered system for screening entities against sanctions lists,
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+## Live Demo
+
+- **Application**: https://redline-demo.vercel.app/
+- **API**: https://redline-demo-production.up.railway.app/api
+- **Source Code**: https://github.com/spudy-vibing/Redline-Demo
+
+---
+
+## Why I Built This
+
+Rather than just talking through qualifications, I wanted to demonstrate how I think about building investigative intelligence platforms.
+
+**Redline** is a China-focused corporate intelligence platform that transforms fragmented sanctions and ownership data into an explorable knowledge graph—connecting dots across complex Chinese corporate networks to surface hidden compliance risks.
+
+### What This Demonstrates
+
+| Capability | Implementation |
+|------------|----------------|
+| **Complex Data Modeling** | Ownership tracing as graph traversal, BIS 50% Rule as first-class logic |
+| **Heterogeneous Data Integration** | CSL, OFAC SDN, OpenCorporates, manual curation |
+| **Modern Architecture** | FastAPI + Neo4j + React + Claude API |
+| **Investigative Thinking** | Timeline pattern detection, AI risk narratives |
+| **Shipping Speed** | Working prototype with real data, not just wireframes |
+
+### Key Differentiators
+
+**1. BIS 50% Rule Engine** - Automatically computes which entities are captured by the BIS 50% ownership rule. If Huawei (Entity List) owns 100% of HiSilicon, then HiSilicon is automatically subject to the same export controls—even if HiSilicon isn't listed by name.
+
+**2. Entity Evolution Timeline** - Tracks corporate restructurings, name changes, and ownership shifts over time. Critical for detecting sanctions evasion patterns: name changes shortly before/after designation, ownership restructures to drop below 50% threshold, rapid subsidiary creation after parent listing.
+
+**3. AI Risk Narratives** - Claude-powered investigative summaries that explain why an entity is risky in plain English. Compliance teams need to communicate risk to executives and boards—not just show a graph.
+
+**4. GraphRAG Chat** - Natural language queries that translate to Cypher graph traversals: "Who are Huawei's subsidiaries?", "Show me semiconductor companies captured by BIS 50%", "Is SMIC connected to the Chinese military?"
+
+---
+
 ## Overview
 
 Redline aggregates data from multiple sanctions and corporate registries into a Neo4j knowledge graph, enabling:
@@ -142,7 +178,7 @@ Claude-generated investigative summaries explaining why an entity is risky:
 | API | FastAPI, Python 3.13, Pydantic |
 | Database | Neo4j 5.x (Graph Database) |
 | AI | Claude API (Anthropic) |
-| Deployment | Docker Compose |
+| Deployment | Vercel (frontend), Railway (API), Neo4j Aura (graph) |
 
 ## Getting Started
 
